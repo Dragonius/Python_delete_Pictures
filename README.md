@@ -1,0 +1,1 @@
+# Python_delete_Pictures
