@@ -7,16 +7,6 @@ from PIL import Image
 def main():
     filename = sys.argv[-1]
 
-    try:
-        im = Image.load(filename)
-        im.verify() #I perform also verify, don't know if he sees other types o defects
-        im.close() #reload is necessary in my case
-        im = Image.load(filename)
-        im.transpose(PIL.Image.FLIP_LEFT_RIGHT)
-        im.close()
-    except:
-    #manage excetions here
-        sys.exit(0)
 
     f = imageio.imread(filename, as_gray=True)
     try:
