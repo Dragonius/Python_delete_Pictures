@@ -7,13 +7,21 @@ from PIL import Image
 def main():
     filename = sys.argv[-1]
 
+    try:
+        im = Image.load(filename)
+        im.verify() #Need to find defects
+        im.close() #reload is needes to continue
+        im = Image.load(filename)
+        im.transpose(PIL.Image.FLIP_LEFT_RIGHT)
+        im.close()
+    except:    #If Error -> Exit program
+        sys.exit(0)
 
     f = imageio.imread(filename, as_gray=True)
     try:
-        imageio.verify(f)
-    # do stuff
+        imageio.verify(f) # Verify more
     except IOError:
-    # filename not an image file
+    # ERROR -> filename not an image file
         sys.exit(0)
 
     def img_estim(img, thrshld):
@@ -24,15 +32,15 @@ def main():
             os.remove(filename)
 
     img_estim(f, 40)
-    #print(img_estim(f, 40))
-    #print
+    #print(img_estim(f, 40)) # if black is more that 255/100*40 (i think)
+    #print #new line
 
 if __name__ == '__main__':
     try:
         main()
-    except KeyboardInterrupt:
+    except KeyboardInterrupt: #Ctrl-C Try stop program
         print('Interrupted')
-        try:
+        try: 
             sys.exit(0)
         except SystemExit:
             os._exit(0)
