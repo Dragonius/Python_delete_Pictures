@@ -1,3 +1,5 @@
 imageio
 numpy
-PIL
+os
+sys
+Pillow
