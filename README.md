@@ -2,4 +2,4 @@
 
 
 
-Simple Commandline: for i in /home/user/Pictures/*.jpg; do python ./Delete.py "$i";done
+Simple Commandline: for i in /home/username/Pictures/*.jpg; do python3 ./Delete.py "$i";done
