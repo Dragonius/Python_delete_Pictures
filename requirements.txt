@@ -1,4 +1,4 @@
 imageio
 numpy
 Pillow
-PIL
+Image
