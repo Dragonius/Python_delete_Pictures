@@ -2,7 +2,8 @@ import sys
 import os
 import imageio
 import numpy as np
-from PIL import Image
+#from PIL import Image
+Import Image
 
 def main():
     filename = sys.argv[-1]
