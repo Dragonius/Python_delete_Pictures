@@ -1,12 +1,5 @@
-try:
-    import sys
-
-    _loaded_with = 'sys'
-except ImportError:
-    import os
-
-    _loaded_with = 'os'
-
+import sys
+import os
 import imageio
 import numpy as np
 #from PIL import Image
