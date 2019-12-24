@@ -5,7 +5,7 @@ import numpy as np
 #from PIL import Image
 import image
 import pytest
-
+import pathlib
 
 def ex():
     raise SystemExit(1)
@@ -14,16 +14,15 @@ def test_exits():
     with pytest.raises(SystemExit):
         ex()
 
-_dir = os.path.dirname(os.path.realpath(__file__))
-FIXTURE_DIR = py.path.local(_dir) / 'test_files'
-
-@pytest.mark.datafiles(
-    FIXTURE_DIR / 'Clouds.jpg'
-    )
-def test_fast_forward(datafiles):
-    assert len(datafiles.listdir()) == 1
+files = [p for p in pathlib.Path('test_files').iterdir() if p.is_file()]
 
 
+@pytest.fixture
+def image(request):
+    path = request.param
+    with path.open('rb') as fileobj:
+        yield fileobj.read()
+    #141.12778
 
 def main():
     filename = sys.argv[-1]
