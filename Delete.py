@@ -3,7 +3,27 @@ import os
 import imageio
 import numpy as np
 #from PIL import Image
-import Image
+import image
+import pytest
+
+
+def ex():
+    raise SystemExit(1)
+
+def test_exits():
+    with pytest.raises(SystemExit):
+        ex()
+
+_dir = os.path.dirname(os.path.realpath(__file__))
+FIXTURE_DIR = py.path.local(_dir) / 'test_files'
+
+@pytest.mark.datafiles(
+    FIXTURE_DIR / 'Clouds.jpg'
+    )
+def test_fast_forward(datafiles):
+    assert len(datafiles.listdir()) == 1
+
+
 
 def main():
     filename = sys.argv[-1]
@@ -23,7 +43,7 @@ def main():
     try:
         imageio.verify(f) # Verify more
     except IOError:
-    # ERROR -> filename not an image file
+        # ERROR -> filename not an image file
         sys.exit(0)
 
     def img_estim(img, thrshld):
