@@ -13,8 +13,8 @@ def main():
         im.verify() #Need to find defects
         im.close() #reload is needes to continue
         im = Image.load(filename)
- #       im.transpose(PIL.Image.FLIP_LEFT_RIGHT)
-       im.transpose(Image.FLIP_LEFT_RIGHT)
+        #im.transpose(PIL.Image.FLIP_LEFT_RIGHT)
+        im.transpose(Image.FLIP_LEFT_RIGHT)
         im.close()
     except:    #If Error -> Exit program
         sys.exit(0)
