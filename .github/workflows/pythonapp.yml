@@ -9,14 +9,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Set up Python 3.5.7
+    - name: Set up Python 2.7.18
       uses: actions/setup-python@v1
       with:
-        python-version: 3.5.7
+        python-version: 2.7.18
     - name: Install dependencies
       run: |
-        python3 -m pip install --upgrade pip
-        pip3 install -r requirements.txt
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
     - name: Test with pytest
       run: |
         pip3 install pytest
