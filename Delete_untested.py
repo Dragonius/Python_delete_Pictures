@@ -13,7 +13,7 @@ def main():
         #print(np.mean(img))
         #return 'light' if is_light else os.remove(filename)
         if is_light == 0:
-       	    os.remove(filename)
+            os.remove(filename)
 
     img_estim(f, 40)
     #print(img_estim(f, 40))
