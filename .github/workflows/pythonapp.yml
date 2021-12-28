@@ -1,7 +1,12 @@
 
 name: Python Delete Pictures File
 
-on: [push]
+on:
+  push:
+    paths:
+    - 'test_delete.py'
+    - 'requirements.txt'
+    - '.github/workflows/pythonapp.yml'
 
 jobs:
   build:
