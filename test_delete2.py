@@ -7,7 +7,7 @@ import numpy as np
 from PIL import Image
 
 def main():
-    #filename = "/home/kayttaja/Lataukset/Git/Python_delete_Pictures/test_files/Clouds_test.jpg"
+    #filename = "./test_files/Clouds_test.jpg"
     filename = sys.argv[-1]
     print(filename)
 
