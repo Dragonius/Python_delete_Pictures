@@ -8,8 +8,7 @@ on:
     - 'tests_delete.py'
     - 'requirements.txt'
     - '.github/workflows/pythonapp.yml'
-jobs:
-  build:
+
 
     #runs-on: ubuntu-16.04
     runs-on: debian-latest
@@ -18,15 +17,16 @@ jobs:
 strategy:
     matrix:
         python-version: ["3.7", "3.8"]
-
-    steps:
-    - uses: actions/checkout@v1
-    - name: Set up Python ${{ matrix.python-version }}
-    - uses: actions/setup-python@v1
-      with:
-        python-version: ${{ matrix.python-version }}
-    - name: Display Python version
-      run: python -c "import sys; print(sys.version)"
+jobs:
+    build:
+      steps:
+      - uses: actions/checkout@v1
+      - name: Set up Python ${{ matrix.python-version }}
+      - uses: actions/setup-python@v1
+        with:
+            python-version: ${{ matrix.python-version }}
+      - name: Display Python version
+        run: python -c "import sys; print(sys.version)"
 
     #steps:
     #- uses: actions/checkout@v1
@@ -34,12 +34,12 @@ strategy:
     #  uses: actions/setup-python@v1
     #  with:
     #    python-version: 3.8.10
-    - name: Install dependencies
-      run: |
-        python3 -m pip install --upgrade pip
-        pip3 install -r requirements.txt
-    - name: Test with pytest
-      run: |
-        pip3 install pytest
-        python3 -m pytest test_delete.py
+      - name: Install dependencies
+        run: |
+         python3 -m pip install --upgrade pip
+         pip3 install -r requirements.txt
+      - name: Test with pytest
+        run: |
+          pip3 install pytest
+          python3 -m pytest test_delete.py
 
