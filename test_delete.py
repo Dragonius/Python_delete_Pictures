@@ -24,7 +24,7 @@ def main():
     #print(img_estim(f, 40))
     #print
 
-def test_imgislight():
+def test_imgislighttrue():
 #    imagetreshold = 141.1277
     filename = "./test_files/Clouds_test.jpg"
     f = imageio.imread(filename, as_gray=True)
@@ -33,10 +33,28 @@ def test_imgislight():
     assert is_light == True
     
 
-def test_imagetresholdvalue():
+def test_imagetresholdvaluetrue():
      imagetresholdbig = 141.13
      imagetresholdsmall = 141.11
      filename = "./test_files/Clouds_test.jpg"
+     f = imageio.imread(filename, as_gray=True)
+     meanvalue1 = np.mean(f)
+     meanvalue = round(meanvalue1,5)
+     assert imagetresholdbig  >=  meanvalue >= imagetresholdsmall
+
+def test_imgislightfalse():
+#    imagetreshold = 141.1277
+    filename = "./test_files/Clouds_test2.jpg"
+    f = imageio.imread(filename, as_gray=True)
+    is_light = np.mean(f) > 40
+    print(is_light)
+    assert is_light == False
+
+
+def test_imagetresholdvaluefalse():
+     imagetresholdbig = 39.99
+     imagetresholdsmall = 1.00
+     filename = "./test_files/Clouds_test2.jpg"
      f = imageio.imread(filename, as_gray=True)
      meanvalue1 = np.mean(f)
      meanvalue = round(meanvalue1,5)
