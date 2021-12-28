@@ -14,6 +14,7 @@ def main():
     def img_estim(img, thrshld):
         is_light = np.mean(img) > thrshld
         print(np.mean(img))
+        print(is_light)
         #return 'light' if is_light else os.remove(filename)
         if is_light == 0:
 #               os.remove(filename)
@@ -22,6 +23,24 @@ def main():
     img_estim(f, 40)
     #print(img_estim(f, 40))
     #print
+
+def test_imgislight():
+#    imagetreshold = 141.1277
+    filename = "./test_files/Clouds_test.jpg"
+    f = imageio.imread(filename, as_gray=True)
+    is_light = np.mean(f) > 40
+    print(is_light)
+    assert is_light == True
+    
+
+def test_imagetresholdvalue():
+     imagetresholdbig = 141.12778
+     imagetresholdsmall = 141.12777
+     filename = "./test_files/Clouds_test.jpg"
+     f = imageio.imread(filename, as_gray=True)
+     meanvalue1 = np.mean(f)
+     meanvalue = round(meanvalue1,5)
+     assert imagetresholdbig  >=  meanvalue >= imagetresholdsmall
 
 if __name__ == '__main__':
     try:
