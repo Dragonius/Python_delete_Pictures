@@ -7,7 +7,8 @@ import numpy as np
 
 #missing all comments
 def main():
-    filename = "./test_files/Clouds_test.jpg"
+    #filename = "./test_files/Clouds_test.jpg"
+    filename =  sys.argv[-1]
 
     f = imageio.imread(filename, as_gray=True)
 
@@ -43,7 +44,7 @@ def test_imagetresholdvaluetrue():
      assert imagetresholdbig  >=  meanvalue >= imagetresholdsmall
 
 def test_imgislightfalse():
-#    imagetreshold = 141.1277
+#   imagetreshold = 141.1277
     filename = "./test_files/Clouds_test2.jpg"
     f = imageio.imread(filename, as_gray=True)
     is_light = np.mean(f) > 40
