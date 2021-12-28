@@ -34,8 +34,8 @@ def test_imgislight():
     
 
 def test_imagetresholdvalue():
-     imagetresholdbig = 141.12780
-     imagetresholdsmall = 141.12770
+     imagetresholdbig = 141.13
+     imagetresholdsmall = 141.11
      filename = "./test_files/Clouds_test.jpg"
      f = imageio.imread(filename, as_gray=True)
      meanvalue1 = np.mean(f)
