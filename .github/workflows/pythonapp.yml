@@ -1,47 +1,24 @@
-name: Test-Python-Delete-Pictures-File
 
-#on: [push]
-#on: workflow_dispatch:
-on:
-  push:
-    paths:
-    - 'tests_delete.py'
-    - 'requirements.txt'
-    - '.github/workflows/pythonapp.yml'
+name: Python Delete Pictures File
 
-
-
-
+on: [push]
 
 jobs:
-    build:
-    #runs-on: ubuntu-16.04
-    #runs-on:  ubuntu-latest
-    runs-on: ubuntu-18.04
-    strategy:
-      matrix:
-        python-version: ["3.7", "3.8"]
-      steps:
-      - uses: actions/checkout@v1
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v1
-        with:
-          python-version: ${{ matrix.python-version }}
-      - name: Display Python version
-        run: python -c "import sys; print(sys.version)"
+  build:
 
-    #steps:
-    #- uses: actions/checkout@v1
-    #- name: Set up Python 3.8.10
-    #  uses: actions/setup-python@v1
-    #  with:
-    #    python-version: 3.8.10
-      - name: Install dependencies
-        run: |
-         python3 -m pip install --upgrade pip
-         pip3 install -r requirements.txt
-      - name: Test with pytest
-        run: |
-          pip3 install pytest
-          python3 -m pytest test_delete.py
+    runs-on: ubuntu-latest
 
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up Python 3.5.7
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.5.7
+    - name: Install dependencies
+      run: |
+        python3 -m pip install --upgrade pip
+        pip3 install -r requirements.txt
+    - name: Test with pytest
+      run: |
+        pip3 install pytest
+        python3 -m pytest Delete.py
