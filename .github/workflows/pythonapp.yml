@@ -11,14 +11,15 @@ on:
 
 
     #runs-on: ubuntu-16.04
-    runs-on: debian-latest
+    #runs-on:  ubuntu-latest
+    runs-on: ubuntu-18.04
 
 
-strategy:
-    matrix:
-        python-version: ["3.7", "3.8"]
 jobs:
     build:
+      strategy:
+        matrix:
+          python-version: ["3.7", "3.8"]
       steps:
       - uses: actions/checkout@v1
       - name: Set up Python ${{ matrix.python-version }}
