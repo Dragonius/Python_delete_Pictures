@@ -49,12 +49,12 @@ def main():
         is_light = np.mean(img) > thrshld
         #print(np.mean(img))
         #return 'light' if is_light else os.remove(filename)
-        if is_light == 0:
-            os.remove(filename)
+#        if is_light == 0:
+#            os.remove(filename)
 
     img_estim(f, 40)
-    #print(img_estim(f, 40)) # if black is more that 255/100*40 (i think)
-    #print #new line
+    print(img_estim(f, 40)) # if black is more that 255/100*40 (i think)
+    print("")  #new line
 
 if __name__ == '__main__':
     try:
