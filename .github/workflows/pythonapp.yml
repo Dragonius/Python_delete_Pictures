@@ -1,4 +1,4 @@
-name: Test Python Delete Pictures File
+name: Test-Python-Delete-Pictures-File
 
 #on: [push]
 #on: workflow_dispatch:
