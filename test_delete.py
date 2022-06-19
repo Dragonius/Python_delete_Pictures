@@ -3,15 +3,18 @@
 import sys
 import os
 import imageio
+#Bellow import is getting ready to imageio V2 import when imageio v3 released
+#import imageio.v2 as imageio
 import numpy as np
 
 #missing all comments
 def main():
     #filename = "./test_files/Clouds_test.jpg"
     filename =  sys.argv[-1]
-
+    #Bellow code is ImageIO Version 2
     f = imageio.imread(filename, as_gray=True)
-
+    #bellow code is reading to imageio Version 3
+    #f = iio.v3.imread(filename, as_gray=True)
     def img_estim(img, thrshld):
         is_light = np.mean(img) > thrshld
         print(np.mean(img))
