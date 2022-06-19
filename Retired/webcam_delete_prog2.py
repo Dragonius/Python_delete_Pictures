@@ -33,7 +33,7 @@ def main():
         if is_light == 0:
             os.remove(filename)
 
-    img_estim(f, 80)
+    img_estim(f, 40)
     #print(img_estim(f, 40))
     #print
 
