@@ -27,7 +27,8 @@ def main():
     except: 
     #manage excetions here
         print("File load Failed")
-        sys.exit(0)
+        #we dont want straight to exit, not yet
+        #sys.exit(0)
 
     f = imageio.imread(filename, as_gray=True)
     try:
