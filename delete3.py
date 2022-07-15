@@ -23,7 +23,8 @@ def main():
         print(path)
         if filename.endswith(".jpg"):
             print(filename)
-        
+            pathfilename = path + filename
+            print(pathfilename)    
 
     try:
         im = Image.load(filename)
