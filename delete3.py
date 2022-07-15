@@ -20,9 +20,10 @@ def main():
     
     dir_list = os.listdir(path) 
     for filename in os.listdir(path):
+        print(path)
         if filename.endswith(".jpg"):
             print(filename)
-
+        
 
     try:
         im = Image.load(filename)
