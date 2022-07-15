@@ -27,17 +27,17 @@ def main():
         #    print(pathfilename)    
 
         try:
-            im = Image.load(filename)
+            im = Image.load(pathfilename)
             im.verify() #I perform also verify, don't know if he sees other types o defects
             im.close() #reload is necessary in my case
-            im = Image.load(filename) 
+            im = Image.load(pathfilename) 
             im.transpose(PIL.Image.FLIP_LEFT_RIGHT)
             im.close()
         except: 
         #manage excetions here
             sys.exit(0)
 
-        f = imageio.imread(filename, as_gray=True)
+        f = imageio.imread(pathfilename, as_gray=True)
         try:
             imageio.verify(f)
         # do stuff
@@ -50,7 +50,7 @@ def main():
             #print(np.mean(img))
             #return 'light' if is_light else os.remove(filename)
             if is_light == 0:
-                os.remove(filename)
+                os.remove(pathfilename)
 
         img_estim(f, 40)
         #print(img_estim(f, 40))
