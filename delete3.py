@@ -20,7 +20,7 @@ def main():
     
     dir_list = os.listdir(path) 
     for filename in os.listdir(path):
-        print(path)
+        #print(path)
         if filename.endswith(".jpg"):
         #    print(filename)
             pathfilename = path + filename
@@ -28,6 +28,7 @@ def main():
 
         try:
             im = Image.load(pathfilename)
+            print(pathfilename)
             im.verify() #I perform also verify, don't know if he sees other types o defects
             im.close() #reload is necessary in my case
             im = Image.load(pathfilename) 
@@ -35,6 +36,7 @@ def main():
             im.close()
         except: 
         #manage excetions here
+            print("Coultn't open image file on im")
             sys.exit(0)
 
         f = imageio.imread(pathfilename, as_gray=True)
@@ -43,6 +45,7 @@ def main():
         # do stuff
         except IOError:
         # filename not an image file
+            print("File is not image, IO error")
             sys.exit(0)
 
         def img_estim(img, thrshld):
