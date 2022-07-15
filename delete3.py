@@ -38,7 +38,7 @@ def main():
         except: 
         #manage excetions here
             print("Coultn't open image file on im")
-            sys.exit(0)
+            #sys.exit(0)
 
         f = imageio.imread(pathfilename, as_gray=True)
         try:
