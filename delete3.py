@@ -26,6 +26,7 @@ def main():
             pathfilename = path + filename
         #    print(pathfilename)    
 
+        print(pathfilename)
         try:
             im = Image.load(pathfilename)
             print(pathfilename)
