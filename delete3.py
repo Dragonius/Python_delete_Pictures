@@ -41,6 +41,7 @@ def main():
             #sys.exit(0)
 
         f = imageio.imread(pathfilename, as_gray=True)
+        print(pathfilename)
         try:
             imageio.verify(f)
         # do stuff
