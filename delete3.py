@@ -6,43 +6,43 @@ import imageio
 import numpy as np
 from PIL import Image
 
-  
-#print("Files and directories in '", path, "' :") 
-  
-# print the list 
-#print(dir_list) 
+
+#print("Files and directories in '", path, "' :")
+
+# print the list
+#print(dir_list)
 
 
 def main():
     path = sys.argv[-1]
     if (path==""):
         os._exit(0)
-    
-    dir_list = os.listdir(path) 
+
+    dir_list = os.listdir(path)
     for filename in os.listdir(path):
         #print(path)
         if filename.endswith(".jpg"):
         #    print(filename)
             pathfilename = path + filename
-        #    print(pathfilename)    
+        #    print(pathfilename)
 
-        print(pathfilename)
+        #print(pathfilename)
         try:
             im = Image.load(pathfilename)
-            print(pathfilename)
             im.verify() #I perform also verify, don't know if he sees other types o defects
             im.close() #reload is necessary in my case
-            im = Image.load(pathfilename) 
+            im = Image.load(pathfilename)
             im.transpose(PIL.Image.FLIP_LEFT_RIGHT)
             im.close()
-        except: 
+        except:
         #manage excetions here
             print("Coultn't open image file on im")
             #sys.exit(0)
 
         f = imageio.imread(pathfilename, as_gray=True)
-        print(pathfilename)
+        #print(pathfilename)
         try:
+            #print(pathfilename)
             imageio.verify(f)
         # do stuff
         except IOError:
