@@ -2,7 +2,11 @@
 
 import sys
 import os
-import imageio
+if sys.version_info < (3, 7):
+    import imageio
+else:
+    import imageio.v2 as imageio
+
 import numpy as np
 from PIL import Image
 
