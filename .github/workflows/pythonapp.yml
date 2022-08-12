@@ -5,6 +5,7 @@ on:
   push:
     paths:
     - 'test_delete.py'
+    - 'test_delete3.py'
     - 'requirements.txt'
     - '.github/workflows/pythonapp.yml'
 
