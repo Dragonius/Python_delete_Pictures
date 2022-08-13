@@ -2,7 +2,12 @@
 
 import sys
 import os
-import imageio
+#import imageio
+if sys.version_info < (3, 7):
+    import imageio
+else:
+    import imageio.v2 as imageio
+
 import numpy as np
 from PIL import Image
 
@@ -19,36 +24,42 @@ def main():
         os._exit(0)
 
     dir_list = os.listdir(path)
+    #print(dir_list)
     for filename in os.listdir(path):
         #print(path)
         if filename.endswith(".jpg"):
-        #    print(filename)
+            #print(filename)
+            #print(path)
             pathfilename = path + filename
-        #    print(pathfilename)
+            #print(pathfilename)
 
         #print(pathfilename)
         try:
-            im = Image.load(pathfilename)
-            im.verify() #I perform also verify, don't know if he sees other types o defects
-            im.close() #reload is necessary in my case
-            im = Image.load(pathfilename)
-            im.transpose(PIL.Image.FLIP_LEFT_RIGHT)
-            im.close()
+            img = Image.open(pathfilename)
+            img.verify() #I perform also verify, don't know if he sees other types o defects
+            img.close() #reload is necessary in my case
+#            img = Image.open(pathfilename)
+#            img.transpose(PIL.Image.FLIP_LEFT_RIGHT)
+#            img.close()
         except:
         #manage excetions here
-            print("Coultn't open image file on im")
+            print("Couldtn't open image file ", pathfilename , " on im ")
             #sys.exit(0)
+            #print(pathfilename)
 
         f = imageio.imread(pathfilename, as_gray=True)
+
+
+        #Imageio Verify is broken
         #print(pathfilename)
-        try:
+#        try:
             #print(pathfilename)
-            imageio.verify(f)
+#            imageio.verify(f)
         # do stuff
-        except IOError:
-        # filename not an image file
-            print("File is not image, IO error")
-            sys.exit(0)
+#        except IOError:
+#        # filename not an image file
+#            print("File is not image, IO error")
+#            sys.exit(0)
 
         def img_estim(img, thrshld):
             is_light = np.mean(img) > thrshld
@@ -70,4 +81,3 @@ if __name__ == '__main__':
             sys.exit(0)
         except SystemExit:
             os._exit(0)
-
