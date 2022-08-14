@@ -3,6 +3,7 @@
 import sys
 import os
 #import imageio
+#image io got updated and they building next to next v2 and v3 brances.
 if sys.version_info < (3, 7):
     import imageio
 else:
@@ -16,7 +17,7 @@ from PIL import Image
 
 # print the list
 #print(dir_list)
-
+#ask for arguments for directory, ifn't given any , exit
 
 def main():
     path = sys.argv[-1]
@@ -43,14 +44,14 @@ def main():
 #            img.close()
         except:
         #manage excetions here
-            print("Couldtn't open image file ", pathfilename , " on im ")
+            print("Couldtn't open image file ", pathfilename , " on img ")
             #sys.exit(0)
             #print(pathfilename)
 
         f = imageio.imread(pathfilename, as_gray=True)
 
 
-        #Imageio Verify is broken
+        #Imageio Verify is broken and its not coming back
         #print(pathfilename)
 #        try:
             #print(pathfilename)
