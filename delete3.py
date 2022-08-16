@@ -4,6 +4,7 @@ import sys
 import os
 #import imageio
 #image io got updated and they building next to next v2 and v3 brances.
+#and there are problems with python3.6 <> python3.7 versions
 if sys.version_info < (3, 7):
     import imageio
 else:
@@ -25,6 +26,8 @@ def main():
         os._exit(0)
 
     dir_list = os.listdir(path)
+    #sort file list, as dir_list cant be a mess order
+    dir_list.sort()
     #print(dir_list)
     for filename in os.listdir(path):
         #print(path)
@@ -43,8 +46,9 @@ def main():
 #            img.transpose(PIL.Image.FLIP_LEFT_RIGHT)
 #            img.close()
         except:
-        #manage excetions here
-            print("Couldtn't open image file ", pathfilename , " on img ")
+        #manage excetions here:
+        #dont quit, because we goind dir of files,
+            print("Couldtn't open image file: ", pathfilename)
             #sys.exit(0)
             #print(pathfilename)
 
