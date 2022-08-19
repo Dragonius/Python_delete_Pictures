@@ -86,6 +86,7 @@ def test_data_dir():
     assert dir_list[1] == "Clouds_test.jpg" 
 
 def test_imgislight_TRUE():
+    path = "./test_files/"
     dir_list = os.listdir(path)
 #    imagetreshold = 141.1277
     filename = path + dir_list[1]
