@@ -21,6 +21,7 @@ from PIL import Image
 
 def main():
     path = sys.argv[-1]
+    path = "./test_files/"
     if (path==""):
         os._exit(0)
 
