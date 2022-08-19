@@ -9,7 +9,6 @@ if sys.version_info < (3, 7):
     import imageio
 else:
     import imageio.v2 as imageio
-
 import numpy as np
 
 #missing all comments
