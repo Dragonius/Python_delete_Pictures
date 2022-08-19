@@ -74,7 +74,19 @@ def main():
         img_estim(f, 40)
         #print(img_estim(f, 40))
         #print
+
+def test_data_dir():
+    path = "./test_files/"
+    dir_list = os.listdir(path)
+    data_out =  6
+    data_len=len(dir_list)
+    print(data_out - data_len)
+    assert data_out - data_len == 0
+    print(dir_list[1])
+    assert dir_list[1] == "Clouds_test.jpg" 
+
 def test_imgislight_TRUE():
+    dir_list = os.listdir(path)
 #    imagetreshold = 141.1277
     filename = path + dir_list[1]
     f = imageio.imread(filename, as_gray=True)
