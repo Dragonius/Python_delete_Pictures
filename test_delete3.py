@@ -76,7 +76,7 @@ def main():
         #print
 def test_imgislight_TRUE():
 #    imagetreshold = 141.1277
-    filename = "./test_files/Clouds_test.jpg"
+    filename = path + dir_list[1]
     f = imageio.imread(filename, as_gray=True)
     is_light = np.mean(f) > 40
     print(is_light)
