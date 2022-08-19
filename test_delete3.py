@@ -97,17 +97,21 @@ def test_imgislight_TRUE():
     
 
 def test_imagetresholdvalue_TRUE():
-     imagetresholdbig = 141.13
-     imagetresholdsmall = 141.11
-     filename = "./test_files/Clouds_test.jpg"
-     f = imageio.imread(filename, as_gray=True)
-     meanvalue1 = np.mean(f)
-     meanvalue = round(meanvalue1,5)
-     assert imagetresholdbig  >=  meanvalue >= imagetresholdsmall
+    path = "./test_files/"
+    dir_list = os.listdir(path)
+    imagetresholdbig = 141.13
+    imagetresholdsmall = 141.11
+    filename = path + dir_list[1]
+    f = imageio.imread(filename, as_gray=True)
+    meanvalue1 = np.mean(f)
+    meanvalue = round(meanvalue1,5)
+    assert imagetresholdbig  >=  meanvalue >= imagetresholdsmall
 
 def test_imgislight_FALSE():
+    path = "./test_files/"
+    dir_list = os.listdir(path)
 #   imagetreshold = 141.1277
-    filename = "./test_files/Clouds_test2.jpg"
+    filename = path + dir_list[0]
     f = imageio.imread(filename, as_gray=True)
     is_light = np.mean(f) > 40
     print(is_light)
@@ -115,13 +119,15 @@ def test_imgislight_FALSE():
 
 
 def test_imagetresholdvalue_FALSE():
-     imagetresholdbig = 39.99
-     imagetresholdsmall = 1.00
-     filename = "./test_files/Clouds_test2.jpg"
-     f = imageio.imread(filename, as_gray=True)
-     meanvalue1 = np.mean(f)
-     meanvalue = round(meanvalue1,5)
-     assert imagetresholdbig  >=  meanvalue >= imagetresholdsmall
+    path = "./test_files/"
+    dir_list = os.listdir(path)
+    imagetresholdbig = 39.99
+    imagetresholdsmall = 1.00
+    filename = path + dir_list[0]
+    f = imageio.imread(filename, as_gray=True)
+    meanvalue1 = np.mean(f)
+    meanvalue = round(meanvalue1,5)
+    assert imagetresholdbig  >=  meanvalue >= imagetresholdsmall
 
 if __name__ == '__main__':
     try:
