@@ -23,7 +23,7 @@ from PIL import Image
 def main():
     path = sys.argv[-1]
     if (path==""):
-        os._exit(0)
+        os.exit(0)
 
     dir_list = os.listdir(path)
     #sort file list, as dir_list cant be a mess order
@@ -86,4 +86,4 @@ if __name__ == '__main__':
         try:
             sys.exit(0)
         except SystemExit:
-            os._exit(0)
+            os.exit(0)
