@@ -71,6 +71,7 @@ def main():
             #print(np.mean(img))
             #return 'light' if is_light else os.remove(filename)
             if is_light == 0:
+                #dont print anything, just Delete
                 os.remove(pathfilename)
 
         img_estim(f, 40)

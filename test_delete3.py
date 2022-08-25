@@ -4,6 +4,7 @@ import sys
 import os
 #import imageio
 #image io got updated and they building next to next v2 and v3 brances.
+#and there are problems with python3.6 <> python3.7 versions
 if sys.version_info < (3, 7):
     import imageio
 else:
@@ -26,7 +27,8 @@ def main():
         os._exit(0)
 
     dir_list = os.listdir(path)
-    #print(dir_list)
+    #sort file list, as dir_list cant be a mess order
+    dir_list.sort()
     for filename in os.listdir(path):
         #print(path)
         if filename.endswith(".jpg"):
@@ -45,6 +47,7 @@ def main():
 #            img.close()
         except:
         #manage excetions here
+        #dont quit, because we goind dir of files,
             print("Couldtn't open image file ", pathfilename , " on img ")
             #sys.exit(0)
             #print(pathfilename)
@@ -68,8 +71,8 @@ def main():
             #print(np.mean(img))
             #return 'light' if is_light else os.remove(filename)
             if is_light == 0:
-                print("Delete this file")
-                #os.remove(pathfilename)
+                #print("Delete this file")
+                os.remove(pathfilename)
 
         img_estim(f, 40)
         #print(img_estim(f, 40))
