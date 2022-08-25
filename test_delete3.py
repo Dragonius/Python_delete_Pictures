@@ -21,6 +21,7 @@ from PIL import Image
 #ask for arguments for directory, ifn't given any , exit
 
 def main():
+    """Start main program."""
     path = sys.argv[-1]
     path = "./test_files/"
     if (path==""):
