@@ -42,9 +42,9 @@ def main():
             img = Image.open(pathfilename)
             img.verify() #I perform also verify, don't know if he sees other types o defects
             img.close() #reload is necessary in my case
-#            img = Image.open(pathfilename)
-#            img.transpose(PIL.Image.FLIP_LEFT_RIGHT)
-#            img.close()
+            #img = Image.open(pathfilename)
+            #img.transpose(PIL.Image.FLIP_LEFT_RIGHT)
+            #img.close()
         except:
         #manage excetions here
         #dont quit, because we goind dir of files,
@@ -57,14 +57,14 @@ def main():
 
         #Imageio Verify is broken and its not coming back
         #print(pathfilename)
-#        try:
+        #try:
             #print(pathfilename)
-#            imageio.verify(f)
+            #imageio.verify(f)
         # do stuff
-#        except IOError:
-#        # filename not an image file
-#            print("File is not image, IO error")
-#            sys.exit(0)
+        #except IOError:
+        # filename not an image file
+            #print("File is not image, IO error")
+            #sys.exit(0)
 
         def img_estim(img, thrshld):
             is_light = np.mean(img) > thrshld
@@ -91,7 +91,7 @@ def test_data_dir():
 def test_imgislight_TRUE():
     path = "./test_files/"
     dir_list = os.listdir(path)
-#    imagetreshold = 141.1277
+    #imagetreshold = 141.1277
     filename = path + dir_list[1]
     f = imageio.imread(filename, as_gray=True)
     is_light = np.mean(f) > 40
@@ -113,7 +113,7 @@ def test_imagetresholdvalue_TRUE():
 def test_imgislight_FALSE():
     path = "./test_files/"
     dir_list = os.listdir(path)
-#   imagetreshold = 141.1277
+    #imagetreshold = 141.1277
     filename = path + dir_list[0]
     f = imageio.imread(filename, as_gray=True)
     is_light = np.mean(f) > 40

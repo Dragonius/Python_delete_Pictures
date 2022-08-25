@@ -25,7 +25,7 @@ def main():
         print(is_light)
         #return 'light' if is_light else os.remove(filename)
         if is_light == 0:
-#               os.remove(filename)
+            #os.remove(filename)
             print("delete this file")
         
     img_estim(f, 40)
@@ -33,7 +33,7 @@ def main():
     #print
 
 def test_imgislight_TRUE():
-#    imagetreshold = 141.1277
+    #imagetreshold = 141.1277
     filename = "./test_files/Clouds_test.jpg"
     f = imageio.imread(filename, as_gray=True)
     is_light = np.mean(f) > 40
@@ -42,16 +42,16 @@ def test_imgislight_TRUE():
     
 
 def test_imagetresholdvalue_TRUE():
-     imagetresholdbig = 141.13
-     imagetresholdsmall = 141.11
-     filename = "./test_files/Clouds_test.jpg"
-     f = imageio.imread(filename, as_gray=True)
-     meanvalue1 = np.mean(f)
-     meanvalue = round(meanvalue1,5)
-     assert imagetresholdbig  >=  meanvalue >= imagetresholdsmall
+    imagetresholdbig = 141.13
+    imagetresholdsmall = 141.11
+    filename = "./test_files/Clouds_test.jpg"
+    f = imageio.imread(filename, as_gray=True)
+    meanvalue1 = np.mean(f)
+    meanvalue = round(meanvalue1,5)
+    assert imagetresholdbig  >=  meanvalue >= imagetresholdsmall
 
 def test_imgislight_FALSE():
-#   imagetreshold = 141.1277
+    #imagetreshold = 141.1277
     filename = "./test_files/Clouds_test2.jpg"
     f = imageio.imread(filename, as_gray=True)
     is_light = np.mean(f) > 40
@@ -60,13 +60,13 @@ def test_imgislight_FALSE():
 
 
 def test_imagetresholdvalue_FALSE():
-     imagetresholdbig = 39.99
-     imagetresholdsmall = 1.00
-     filename = "./test_files/Clouds_test2.jpg"
-     f = imageio.imread(filename, as_gray=True)
-     meanvalue1 = np.mean(f)
-     meanvalue = round(meanvalue1,5)
-     assert imagetresholdbig  >=  meanvalue >= imagetresholdsmall
+    imagetresholdbig = 39.99
+    imagetresholdsmall = 1.00
+    filename = "./test_files/Clouds_test2.jpg"
+    f = imageio.imread(filename, as_gray=True)
+    meanvalue1 = np.mean(f)
+    meanvalue = round(meanvalue1,5)
+    assert imagetresholdbig  >=  meanvalue >= imagetresholdsmall
 
 if __name__ == '__main__':
     try:
