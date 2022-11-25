@@ -13,9 +13,10 @@ jobs:
   build:
     runs-on: ${{ matrix.os }}
     strategy:
+      max-parallel: 1
       matrix:
         python: [3.5, 3.6, 3.7, 3.8, 3.9, 3.10.0]
-        os: [ubuntu-latest, ubuntu-22.04, ubuntu-20.04]
+        os: [ubuntu-latest, ubuntu-22.04 , windows-2019]
 
     steps:
     - uses: actions/checkout@v3
