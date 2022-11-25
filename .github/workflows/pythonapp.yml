@@ -13,9 +13,9 @@ jobs:
   build:
     runs-on: ${{ matrix.os }}
     strategy:
-      max-parallel: 8
+      max-parallel: 1
       matrix:
-        python: [3.5, 3.6, 3.7, 3.8, 3.9, 3.10.0]
+        python: [3.5, 3.6, 3.7, 3.8, 3.9, 3.9.15, 3.10.0, 3.10.8, 3.11, 3.12]
         os: [ubuntu-latest, windows-2019]
 
     steps:
