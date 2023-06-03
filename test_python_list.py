@@ -14,11 +14,16 @@ from PIL import Image
 #print("Files and directories in '", path, "' :")
 
 # print the list
-#print(dir_list)
+print("print list that show filenames")
+print()
 #ask for arguments for directory, ifn't given any , exit
 path = "/home/kayttaja/Lataukset/Git/Python_delete_Pictures/test_files/"
 dir_list = os.listdir(path)
 print(dir_list)
+
+print()
+print("Full dir with name ")
+print()
 for filename in os.listdir(path):
     #print(path)
     if filename.endswith(".jpg"):
@@ -26,6 +31,10 @@ for filename in os.listdir(path):
         #print(path)
         pathfilename = path + filename
         print(pathfilename)
+
+print()
+print("alternative style")
+print()
 
 data_len=len(dir_list)
 data_out = 0
