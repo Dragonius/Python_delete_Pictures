@@ -16,7 +16,7 @@ def main():
     #filename = "./test_files/Clouds_test.jpg"
     filename =  sys.argv[-1]
     #Bellow code is ImageIO Version 2
-    f = imageio.imread(filename, mode='F')
+    f = imageio.imread(filename, L)
     #bellow code is reading to imageio Version 3
     #f = iio.v3.imread(filename, as_gray=True)
     def img_estim(img, thrshld):
@@ -35,7 +35,7 @@ def main():
 def test_imgislight_TRUE():
     #imagetreshold = 141.1277
     filename = "./test_files/Clouds_test.jpg"
-    f = imageio.imread(filename, mode=F)
+    f = imageio.imread(filename, L)
     is_light = np.mean(f) > 40
     print(is_light)
     assert is_light == True
