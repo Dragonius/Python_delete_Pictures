@@ -53,7 +53,7 @@ def main():
             #sys.exit(0)
             #print(pathfilename)
 
-        f = imageio.imread(pathfilename, mode=F)
+        f = imageio.imread(pathfilename, pilmode='L')
 
 
         #Imageio Verify is broken and its not coming back
@@ -94,7 +94,7 @@ def test_imgislight_TRUE():
     dir_list = os.listdir(path)
     #imagetreshold = 141.1277
     filename = path + dir_list[1]
-    f = imageio.imread(filename, mode=F)
+    f = imageio.imread(filename, pilmode='L')
     is_light = np.mean(f) > 40
     print(is_light)
     assert is_light == True
@@ -106,7 +106,7 @@ def test_imagetresholdvalue_TRUE():
     imagetresholdbig = 141.13
     imagetresholdsmall = 141.11
     filename = path + dir_list[1]
-    f = imageio.imread(filename, mode=F)
+    f = imageio.imread(filename, pilmode='L')
     meanvalue1 = np.mean(f)
     meanvalue = round(meanvalue1,5)
     assert imagetresholdbig  >=  meanvalue >= imagetresholdsmall
@@ -116,7 +116,7 @@ def test_imgislight_FALSE():
     dir_list = os.listdir(path)
     #imagetreshold = 141.1277
     filename = path + dir_list[0]
-    f = imageio.imread(filename, mode=F)
+    f = imageio.imread(filename, pilmode='L')
     is_light = np.mean(f) > 40
     print(is_light)
     assert is_light == False
@@ -128,7 +128,7 @@ def test_imagetresholdvalue_FALSE():
     imagetresholdbig = 39.99
     imagetresholdsmall = 1.00
     filename = path + dir_list[0]
-    f = imageio.imread(filename, mode=F)
+    f = imageio.imread(filename, pilmode='L')
     meanvalue1 = np.mean(f)
     meanvalue = round(meanvalue1,5)
     assert imagetresholdbig  >=  meanvalue >= imagetresholdsmall
