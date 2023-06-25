@@ -16,7 +16,7 @@ def main():
     #filename = "./test_files/Clouds_test.jpg"
     filename =  sys.argv[-1]
     #Bellow code is ImageIO Version 2
-    f = imageio.imread(filename, as_gray=True)
+    f = imageio.imread(filename, mode='F')
     #bellow code is reading to imageio Version 3
     #f = iio.v3.imread(filename, as_gray=True)
     def img_estim(img, thrshld):
