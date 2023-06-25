@@ -4,6 +4,13 @@
 
 Simple Commandline: for i in /home/username/Pictures/*.jpg; do python3 ./delete.py "$i";done
 
+Requirments starts from:
+python 3.7 -> python 3.11
+Pillow ( 9.3.0 ) 
+nympy
+imageio ( Python 3.7 and newer ) 
+
+
 [![Python tests](https://github.com/Dragonius/Python_delete_Pictures/actions/workflows/pythonapp.yml/badge.svg)](https://github.com/Dragonius/Python_delete_Pictures/actions/workflows/pythonapp.yml)
 
 [![CodeQL](https://github.com/Dragonius/Python_delete_Pictures/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/Dragonius/Python_delete_Pictures/actions/workflows/codeql-analysis.yml)
