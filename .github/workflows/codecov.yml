@@ -4,16 +4,7 @@ on:
   pull_request:
     # The branches below must be a subset of the branches above
     branches: [ master ]
-  schedule:
-    - cron: '0 12 1 * *'
 jobs:
-  test_schedule:
-    runs-on: ubuntu-latest
-    steps:
-      - name: 1 day on month
-      - name: Every time
-        run: echo "This step will always 1 day on month at 12:00"
-
   analyze:
     name: Analyze
     runs-on: ubuntu-latest
