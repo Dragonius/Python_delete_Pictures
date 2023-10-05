@@ -1,3 +1,5 @@
 imageio
 numpy
 Pillow==10.0.1
+codecov
+pytest-cov
