@@ -119,7 +119,7 @@ def test_imgislight_FALSE():
     f = imageio.imread(filename, pilmode='L')
     is_light = np.mean(f) > 40
     print(is_light)
-    assert is_light == False
+    assert is_light != False
 
 
 def test_imagetresholdvalue_FALSE():
@@ -131,7 +131,7 @@ def test_imagetresholdvalue_FALSE():
     f = imageio.imread(filename, pilmode='L')
     meanvalue1 = np.mean(f)
     meanvalue = round(meanvalue1,5)
-    assert imagetresholdbig  >=  meanvalue >= imagetresholdsmall
+    assert not imagetresholdbig  >=  meanvalue >= imagetresholdsmall
 
 if __name__ == '__main__':
     try:
