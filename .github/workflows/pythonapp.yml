@@ -38,7 +38,7 @@ jobs:
         python3 -m pytest test_delete.py
     - name: Test test_delete3.py with pytest and add report
       run: |
-        pip3 install pytest
+        pip3 install pytest pytest-cov
         python3 -m pytest  --cov=./ --cov-report=xml test_delete3.py
     - name: Upload coverage reports to Codecov
       uses: codecov/codecov-action@v3
