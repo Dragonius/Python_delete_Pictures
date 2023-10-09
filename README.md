@@ -5,7 +5,7 @@
 Simple Commandline: for i in /home/username/Pictures/*.jpg; do python3 ./delete.py "$i";done
 
 Requirments starts from:
-python 3.7 -> python 3.11
+python 3.8 -> python 3.11
 Pillow ( 9.3.0 ) 
 nympy
 imageio ( Python 3.7 and newer ) 
