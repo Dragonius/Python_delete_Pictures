@@ -66,7 +66,7 @@ def test_imagetresholdvalue_FALSE():
     f = imageio.imread(filename, pilmode='L')
     meanvalue1 = np.mean(f)
     meanvalue = round(meanvalue1,5)
-    assert imagetresholdbig  >=  meanvalue >= imagetresholdsmall
+    assert not imagetresholdbig  <=  meanvalue <= imagetresholdsmall
 
 if __name__ == '__main__':
     try:

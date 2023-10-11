@@ -86,14 +86,14 @@ def test_data_dir():
     data_len=len(dir_list)
     print(data_out - data_len)
     assert data_out - data_len == 0
-    print(dir_list[1])
-    assert dir_list[1] == "Clouds_test.jpg" 
+    print(dir_list[4])
+    assert dir_list[4] == "Clouds_test.jpg" 
 
 def test_imgislight_TRUE():
     path = "./test_files/"
     dir_list = os.listdir(path)
     #imagetreshold = 141.1277
-    filename = path + dir_list[1]
+    filename = path + dir_list[4]
     f = imageio.imread(filename, pilmode='L')
     is_light = np.mean(f) > 40
     print(is_light)
@@ -105,7 +105,7 @@ def test_imagetresholdvalue_TRUE():
     dir_list = os.listdir(path)
     imagetresholdbig = 141.13
     imagetresholdsmall = 141.11
-    filename = path + dir_list[1]
+    filename = path + dir_list[4]
     f = imageio.imread(filename, pilmode='L')
     meanvalue1 = np.mean(f)
     meanvalue = round(meanvalue1,5)
