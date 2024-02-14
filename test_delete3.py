@@ -81,7 +81,7 @@ def main():
 
 def test_data_dir():
     path = "./test_files/"
-    dir_list = os.listdir(path)
+    dir_list = sorted(os.listdir(path))
     data_out =  6
     data_len=len(dir_list)
     print(data_out - data_len)
