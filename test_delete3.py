@@ -53,7 +53,7 @@ def main():
             #sys.exit(0)
             #print(pathfilename)
 
-        f = imageio.imread(pathfilename, pilmode='L')
+        f = imageio.imread(pathfilename, mode='L')
 
 
         #Imageio Verify is broken and its not coming back
