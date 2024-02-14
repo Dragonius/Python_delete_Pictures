@@ -92,7 +92,7 @@ def test_data_dir():
     print(dir_list[3])
     print(dir_list[4])
     print(dir_list[5])
-    assert dir_list[4] == "Cloudstest.jpg" 
+    assert dir_list[4] == "Test_clouds.jpg" 
 
 def test_imgislight_TRUE():
     path = "./test_files/"
