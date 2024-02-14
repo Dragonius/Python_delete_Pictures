@@ -10,8 +10,8 @@ if sys.version_info < (3, 7):
 else:
     import imageio.v2 as imageio
 
-if sys.version_info > (3, 8):
-    import imageio
+#if sys.version_info > (3, 8):
+#    import imageio
 
 import numpy as np
 from PIL import Image
