@@ -1,13 +1,16 @@
 import sys
 import os
-import imageio
+if sys.version_info < (3, 7):
+    import imageio
+else:
+    import imageio.v2 as imageio
 import numpy as np
 
 def main():
     filename = sys.argv[-1]
 
 
-    f = imageio.imread(filename, as_gray=True)
+    f = imageio.imread(filename, mode='L')
 
     def img_estim(img, thrshld):
         is_light = np.mean(img) > thrshld
