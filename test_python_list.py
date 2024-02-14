@@ -17,7 +17,7 @@ from PIL import Image
 print("print list that show filenames")
 print()
 #ask for arguments for directory, ifn't given any , exit
-path = "/home/kayttaja/Lataukset/Git/Python_delete_Pictures/test_files/"
+path = "./test_files/"
 dir_list = os.listdir(path)
 print(dir_list)
 

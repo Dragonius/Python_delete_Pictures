@@ -3,7 +3,7 @@ set -m
 
 Delete_black_pictures()
 {
-	python3 /home/kayttaja/Lataukset/Git/Python_delete_Pictures/webcam_delete_prog_ver2.py $i;
+	python3 /home/kayttaja/Lataukset/Git/Python_delete_Pictures/delete2.py $i;
 	echo $i;
 }
 COUNTER=0
