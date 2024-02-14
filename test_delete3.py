@@ -107,7 +107,7 @@ def test_imgislight_TRUE():
 
 def test_imagetresholdvalue_TRUE():
     path = "./test_files/"
-    dir_list = os.listdir(path)
+    dir_list = sorted(os.listdir(path))
     imagetresholdbig = 141.13
     imagetresholdsmall = 141.11
     filename = path + dir_list[4]
@@ -118,7 +118,7 @@ def test_imagetresholdvalue_TRUE():
 
 def test_imgislight_FALSE():
     path = "./test_files/"
-    dir_list = os.listdir(path)
+    dir_list = sorted(os.listdir(path))
     #imagetreshold = 141.1277
     filename = path + dir_list[0]
     f = imageio.imread(filename, mode='L')
@@ -129,7 +129,7 @@ def test_imgislight_FALSE():
 
 def test_imagetresholdvalue_FALSE():
     path = "./test_files/"
-    dir_list = os.listdir(path)
+    dir_list = sorted(os.listdir(path))
     imagetresholdbig = 39.99
     imagetresholdsmall = 1.00
     filename = path + dir_list[0]
