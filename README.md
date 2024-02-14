@@ -15,13 +15,15 @@ imageio ( Python 3.7 and newer )
 
 [![CodeQL](https://github.com/Dragonius/Python_delete_Pictures/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/Dragonius/Python_delete_Pictures/actions/workflows/codeql-analysis.yml)
 
+[![codecov](https://codecov.io/gh/Dragonius/Python_delete_Pictures/graph/badge.svg?token=FEVZV98ZP3)](https://codecov.io/gh/Dragonius/Python_delete_Pictures)
+
 ## [![Repography logo](https://images.repography.com/logo.svg)](https://repography.com) / Recent activity [![Time period](https://images.repography.com/31875022/Dragonius/Python_delete_Pictures/recent-activity/dd5dc5fe3b8a4fa66097854354730216_badge.svg)](https://repography.com)
 [![Timeline graph](https://images.repography.com/31875022/Dragonius/Python_delete_Pictures/recent-activity/dd5dc5fe3b8a4fa66097854354730216_timeline.svg)](https://github.com/Dragonius/Python_delete_Pictures/commits)
 [![Issue status graph](https://images.repography.com/31875022/Dragonius/Python_delete_Pictures/recent-activity/dd5dc5fe3b8a4fa66097854354730216_issues.svg)](https://github.com/Dragonius/Python_delete_Pictures/issues)
 [![Pull request status graph](https://images.repography.com/31875022/Dragonius/Python_delete_Pictures/recent-activity/dd5dc5fe3b8a4fa66097854354730216_prs.svg)](https://github.com/Dragonius/Python_delete_Pictures/pulls)
 [![Trending topics](https://images.repography.com/31875022/Dragonius/Python_delete_Pictures/recent-activity/dd5dc5fe3b8a4fa66097854354730216_words.svg)](https://github.com/Dragonius/Python_delete_Pictures/commits)
 
-[![codecov](https://codecov.io/gh/Dragonius/Python_delete_Pictures/graph/badge.svg?token=FEVZV98ZP3)](https://codecov.io/gh/Dragonius/Python_delete_Pictures)
 
 Updates: 
+14.2.2024 update code to newer codebase.
 25.6.2023 Stared to sign commits
