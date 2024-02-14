@@ -21,6 +21,7 @@ imageio ( Python 3.7 and newer )
 [![Pull request status graph](https://images.repography.com/31875022/Dragonius/Python_delete_Pictures/recent-activity/dd5dc5fe3b8a4fa66097854354730216_prs.svg)](https://github.com/Dragonius/Python_delete_Pictures/pulls)
 [![Trending topics](https://images.repography.com/31875022/Dragonius/Python_delete_Pictures/recent-activity/dd5dc5fe3b8a4fa66097854354730216_words.svg)](https://github.com/Dragonius/Python_delete_Pictures/commits)
 
+[![codecov](https://codecov.io/gh/Dragonius/Python_delete_Pictures/graph/badge.svg?token=FEVZV98ZP3)](https://codecov.io/gh/Dragonius/Python_delete_Pictures)
 
 Updates: 
 25.6.2023 Stared to sign commits
