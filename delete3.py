@@ -23,7 +23,10 @@ from PIL import Image
 def main():
     """Start main program."""
     path = sys.argv[-1]
-    if (path==""):
+    #show argv data and lenght
+    #print(sys.argv, len(sys.argv))
+    #kill ifnot arguments.
+    if len(sys.argv)<2:
         os._exit(0)
 
     dir_list = os.listdir(path)
