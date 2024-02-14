@@ -86,7 +86,12 @@ def test_data_dir():
     data_len=len(dir_list)
     print(data_out - data_len)
     assert data_out - data_len == 0
+    print(dir_list[0])
+    print(dir_list[1])
+    print(dir_list[2])
+    print(dir_list[3])
     print(dir_list[4])
+    print(dir_list[5])
     assert dir_list[4] == "Cloudstest.jpg" 
 
 def test_imgislight_TRUE():
