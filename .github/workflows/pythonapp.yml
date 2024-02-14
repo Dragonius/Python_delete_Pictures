@@ -5,6 +5,7 @@ on:
   push:
     paths:
     - 'test_delete.py'
+    - 'test_delete2.py'
     - 'test_delete3.py'
     - 'requirements.txt'
     - '.github/workflows/pythonapp.yml'
@@ -15,7 +16,7 @@ jobs:
     strategy:
       # we should give github deside own speed max-parallel: 1
       matrix:
-        python: [3.8, 3.9, 3.10.10, 3.11 ]
+        python: [3.8, 3.9, 3.10.10, 3.11]
         #depricated versions 3.6, 3.7
         #We are moving to 3.6 -> versions should work on 3.5 version, also  currently broken no 64Arch [3.12]
         os: [ubuntu-latest] # we dont need windows currently, but is works currently [ windows-2019]
@@ -36,9 +37,15 @@ jobs:
       run: |
         pip3 install pytest
         python3 -m pytest test_delete.py
+    - name: Test test_delete.py with pytest
+      run: |
+        pip3 install pytest
+        python3 -m pytest test_delete2.py
     - name: Test test_delete3.py with pytest and add report
       run: |
         pip3 install pytest pytest-cov
+        python3 -m pytest  --cov=./ --cov-report=xml test_delete.py
+        python3 -m pytest  --cov=./ --cov-report=xml test_delete2.py
         python3 -m pytest  --cov=./ --cov-report=xml test_delete3.py
     - name: Upload coverage reports to Codecov
       uses: codecov/codecov-action@v3
