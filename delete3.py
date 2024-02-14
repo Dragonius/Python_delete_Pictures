@@ -53,8 +53,9 @@ def main():
             #sys.exit(0)
             #print(pathfilename)
 
-        f = imageio.imread(pathfilename, as_gray=True)
-
+#       Obselete
+#        f = imageio.imread(pathfilename, as_gray=True)
+        f = imageio.imread(pathfilename, mode='L')
 
         #Imageio Verify is broken and its not coming back
         #print(pathfilename)
