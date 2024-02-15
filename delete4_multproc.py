@@ -7,7 +7,9 @@ import numpy as np
 from PIL import Image
 
 def main(file):
+    print("start dealng files")
     filename = file
+    print(filename)
 
     try:
         im = Image.load(filename)
@@ -20,17 +22,21 @@ def main(file):
     #manage excetions here
         sys.exit(0)
 
-    f = imageio.imread(filename, as_gray=True)
+    #obselete
+    #f = imageio.imread(filename, as_gray=True)
+    f = imageio.imread(filename, mode='L')
     try:
         imageio.verify(f)
+        print("verify 1")
     # do stuff
     except IOError:
     # filename not an image file
+        print("IO error")
         sys.exit(0)
 
     def img_estim(img, thrshld):
         is_light = np.mean(img) > thrshld
-        #print(np.mean(img))
+        print(np.mean(img))
         #return 'light' if is_light else os.remove(filename)
         if is_light == 0:
             os.remove(filename)
@@ -41,7 +47,9 @@ def main(file):
 
 if __name__ == '__main__':
     p = Process(target=main, args=('sys.argv[-1]',))
+    print("start")
     p.start()
+    print("join process")
     p.join()
 #    try:
 #        main()
