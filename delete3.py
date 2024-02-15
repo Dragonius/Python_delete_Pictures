@@ -29,10 +29,16 @@ def main():
     if len(sys.argv)<2:
         os._exit(0)
 
-    dir_list = os.listdir(path)
-    #sort file list, as dir_list cant be a mess order
-    dir_list.sort()
-    #print(dir_list)
+    if os.path.exists(path):
+        dir_list = os.listdir(path)
+        #sort file list, as dir_list cant be a mess order
+        dir_list.sort()
+        #print(dir_list)
+    else:
+        #Failure, stop program
+        print("Couldn't open path: ", path)
+        os._exit(0)
+
     for filename in os.listdir(path):
         #print(path)
         if filename.endswith(".jpg"):
@@ -51,7 +57,7 @@ def main():
 #            img.close()
         except:
         #manage excetions here:
-        #dont quit, because we goind dir of files,
+            #dont quit. just display that file couldn't been opended.
             print("Couldtn't open image file: ", pathfilename)
             #sys.exit(0)
             #print(pathfilename)

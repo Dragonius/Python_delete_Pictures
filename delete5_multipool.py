@@ -20,10 +20,14 @@ def process(pathfilename):
     if is_light == 0:
         #print if file will be deleted
         #print("test DELETE ", pathfilename)
+        #print('parent process:', os.getppid())
+        #print('process id:', os.getpid())
         os.remove(pathfilename)
-    #if is_light == 1:
+#    if is_light == 1:
         #print if file is keep
-        #print("test KEEP ", pathfilename)
+#        print("test KEEP ", pathfilename)
+#        print('parent process:', os.getppid())
+#        print('process id:', os.getpid())
 
 
 
@@ -36,10 +40,13 @@ def main():
     if len(sys.argv)<2:
         os._exit(0)
 
-    dir_list = os.listdir(path)
-    #sort file list, as dir_list cant be a mess order
-    dir_list.sort()
-
+    if os.path.exists(path):
+        dir_list = os.listdir(path)
+        #sort file list, as dir_list cant be a mess order
+        dir_list.sort()
+    else:
+        print("Couldn't open path: ", path)
+        os._exit(0)
 
     p = multiprocessing.Pool()
     for filename in os.listdir(path):
@@ -54,7 +61,8 @@ def main():
             #close file
             img.close()
         except:
-            print("Couldtn't open image file: ", pathfilename)
+            #dont quit. just display that file couldn't been opended.
+            print("Couldn't open image file: ", pathfilename)
 
 
         # launch a process for each file (ish), using async ending.
