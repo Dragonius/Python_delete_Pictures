@@ -12,12 +12,13 @@ def main(file):
     print(filename)
 
     try:
-        im = Image.load(filename)
+        im = Image.open(filename)
         im.verify() #I perform also verify, don't know if he sees other types o defects
         im.close() #reload is necessary in my case
-        im = Image.load(filename) 
-        im.transpose(PIL.Image.FLIP_LEFT_RIGHT)
-        im.close()
+        #Obselect
+        #im = Image.load(filename) 
+        #im.transpose(PIL.Image.FLIP_LEFT_RIGHT)
+        #im.close()
         print("Dealt try 1 ")
     except: 
     #manage excetions here
@@ -26,11 +27,11 @@ def main(file):
 
     #obselete
     #f = imageio.imread(filename, as_gray=True)
-    f = imageio.imread(filename, mode='L')
-    print("Dealt try 2")
     try:
-        imageio.verify(f)
-        print("verify 1")
+        f = imageio.imread(filename, mode='L')
+    #obselete
+    #try:
+    #    imageio.verify(f)
     # do stuff
     except IOError:
     # filename not an image file
@@ -39,13 +40,13 @@ def main(file):
 
     def img_estim(img, thrshld):
         is_light = np.mean(img) > thrshld
-        print(np.mean(img))
+        #print(np.mean(img))
         return 'light' if is_light else os.remove(filename)
         if is_light == 0:
             os.remove(filename)
 
     img_estim(f, 40)
-    print(img_estim(f, 40))
+    #print(img_estim(f, 40))
     #print
 
 if __name__ == '__main__':
