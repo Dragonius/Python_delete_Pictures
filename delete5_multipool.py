@@ -9,8 +9,23 @@ else:
     import imageio.v2 as imageio
 
 
-def process(file):
-    pass # do stuff to a file
+def process(pathfilename):
+    #pass # do stuff to a file
+    f = imageio.imread(pathfilename, mode='L')
+    is_light = np.mean(f) > 40
+    #Print lightness value
+    #print(np.mean(f))
+    #alternative way to do, when calling returns
+    #return 'light' if is_light else os.remove(filename)
+    if is_light == 0:
+        #print if file will be deleted
+        #print("test DELETE ", pathfilename)
+        os.remove(pathfilename)
+    #if is_light == 1:
+        #print if file is keep
+        #print("test KEEP ", pathfilename)
+
+
 
 def main():
     """Start main program."""
@@ -41,24 +56,10 @@ def main():
         except:
             print("Couldtn't open image file: ", pathfilename)
 
-        f = imageio.imread(pathfilename, mode='L')
 
-
-        is_light = np.mean(f) > 40
-        #Print lightness value
-        #print(np.mean(f))
-        #alternative way to do, when calling returns
-        #return 'light' if is_light else os.remove(filename)
-        if is_light == 0:
-            #print if file will be deleted
-            #print("test DELETE ", pathfilename)
-            os.remove(pathfilename)
-        #if is_light == 1:
-            #print if file is keep
-            #print("test KEEP ", pathfilename)
         # launch a process for each file (ish), using async ending.
         # The result will be approximately one process per CPU core available.
-        p.apply_async(process, [filename]) 
+        p.apply_async(process, [pathfilename]) 
 
     p.close()
     p.join() # Wait for all child processes to close.
