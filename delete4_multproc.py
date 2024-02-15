@@ -18,13 +18,16 @@ def main(file):
         im = Image.load(filename) 
         im.transpose(PIL.Image.FLIP_LEFT_RIGHT)
         im.close()
+        print("Dealt try 1 ")
     except: 
     #manage excetions here
+        print("try 1 failed")
         sys.exit(0)
 
     #obselete
     #f = imageio.imread(filename, as_gray=True)
     f = imageio.imread(filename, mode='L')
+    print("Dealt try 2")
     try:
         imageio.verify(f)
         print("verify 1")
@@ -37,16 +40,16 @@ def main(file):
     def img_estim(img, thrshld):
         is_light = np.mean(img) > thrshld
         print(np.mean(img))
-        #return 'light' if is_light else os.remove(filename)
+        return 'light' if is_light else os.remove(filename)
         if is_light == 0:
             os.remove(filename)
 
     img_estim(f, 40)
-    #print(img_estim(f, 40))
+    print(img_estim(f, 40))
     #print
 
 if __name__ == '__main__':
-    p = Process(target=main, args=('sys.argv[-1]',))
+    p = Process(target=main, args=(sys.argv[-1],))
     print("start")
     p.start()
     print("join process")
