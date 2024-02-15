@@ -49,10 +49,11 @@ def main():
             #return 'light' if is_light else os.remove(filename)
             if is_light == 0:
                 #dont print anything, just Delete
-                #print("test DELETE ", pathfilename)
-                os.remove(pathfilename)
+                print("test DELETE ", pathfilename)
+                #os.remove(pathfilename)
 
         img_estim(f, 40)
+        print(img_estim(f, 40))
     # launch a process for each file (ish).
     # The result will be approximately one process per CPU core available.
         p.apply_async(process, [filename]) 
