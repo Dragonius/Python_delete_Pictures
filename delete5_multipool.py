@@ -43,19 +43,21 @@ def main():
 
         f = imageio.imread(pathfilename, mode='L')
 
-        def img_estim(img, thrshld):
-            is_light = np.mean(img) > thrshld
-            #print(np.mean(img))
-            #return 'light' if is_light else os.remove(filename)
-            if is_light == 0:
-                #dont print anything, just Delete
-                print("test DELETE ", pathfilename)
-                #os.remove(pathfilename)
 
-        img_estim(f, 40)
-        print(img_estim(f, 40))
-    # launch a process for each file (ish).
-    # The result will be approximately one process per CPU core available.
+        is_light = np.mean(f) > 40
+        #Print lightness value
+        #print(np.mean(f))
+        #alternative way to do, when calling returns
+        #return 'light' if is_light else os.remove(filename)
+        if is_light == 0:
+            #print if file will be deleted
+            #print("test DELETE ", pathfilename)
+            os.remove(pathfilename)
+        #if is_light == 1:
+            #print if file is keep
+            #print("test KEEP ", pathfilename)
+        # launch a process for each file (ish), using async ending.
+        # The result will be approximately one process per CPU core available.
         p.apply_async(process, [filename]) 
 
     p.close()
