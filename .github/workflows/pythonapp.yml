@@ -41,8 +41,8 @@ jobs:
     - name: Test test_delete3.py with pytest and add report
       run: |
         python3 -m pytest  --cov=./ --cov-report=xml test_delete3.py
-    - name: Upload coverage reports to Codecov
-      uses: codecov/codecov-action@v4.5.0
+#    - name: Upload coverage reports to Codecov
+#      uses: codecov/codecov-action@v4.5.0
     - name: Upload coverage reports to Codecov
       run: |
         # Replace `linux` below with the appropriate OS
