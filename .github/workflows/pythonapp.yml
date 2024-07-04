@@ -43,7 +43,15 @@ jobs:
     - name: Test test_delete3.py with pytest and add report
       run: |
         python3 -m pytest  --cov=./ --cov-report=xml test_delete3.py
+#    - name: Upload coverage reports to Codecov
+#      uses: codecov/codecov-action@v4
     - name: Upload coverage reports to Codecov
-      uses: codecov/codecov-action@v4
+      run: |
+        # Replace `linux` below with the appropriate OS
+        # Options are `alpine`, `linux`, `macos`, `windows`
+        curl -Os https://cli.codecov.io/latest/linux/codecov
+        chmod +x codecov
+        ./codecov --verbose upload-process --fail-on-error -t ${{ secrets.CODECOV_TOKEN }} -n 'service'-${{ github.run_id }} -F service -f coverage-service.xm
       env:
+      #Env, need to find where the env is
         CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
