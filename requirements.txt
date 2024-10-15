@@ -1,5 +1,5 @@
 imageio
 numpy
-Pillow==10.3.0
+Pillow==10.4.0
 codecov
 pytest-cov
