@@ -103,7 +103,11 @@ def test_imgislight_TRUE():
     dir_list = sorted(os.listdir(path))
     #imagetreshold = 141.1277
     filename = path + dir_list[4]
-    f = imageio.imread(filename, mode='L')
+    if sys.version_info < (3, 7):
+        f = imageio.imread(pathfilename, pilmode='L')
+    else:
+        f = imageio.imread(pathfilename, mode='L')
+    #Fix for older python f = imageio.imread(filename, mode='L')
     is_light = np.mean(f) > 40
     print(is_light)
     assert is_light == True
@@ -115,7 +119,11 @@ def test_imagetresholdvalue_TRUE():
     imagetresholdbig = 141.13
     imagetresholdsmall = 141.11
     filename = path + dir_list[4]
-    f = imageio.imread(filename, mode='L')
+    if sys.version_info < (3, 7):
+        f = imageio.imread(pathfilename, pilmode='L')
+    else:
+        f = imageio.imread(pathfilename, mode='L')
+    #Fix for older python f = imageio.imread(filename, mode='L')
     meanvalue1 = np.mean(f)
     meanvalue = round(meanvalue1,5)
     assert imagetresholdbig  >=  meanvalue >= imagetresholdsmall
@@ -125,7 +133,11 @@ def test_imgislight_FALSE():
     dir_list = sorted(os.listdir(path))
     #imagetreshold = 141.1277
     filename = path + dir_list[0]
-    f = imageio.imread(filename, mode='L')
+    if sys.version_info < (3, 7):
+        f = imageio.imread(pathfilename, pilmode='L')
+    else:
+        f = imageio.imread(pathfilename, mode='L')
+    #Fix for older python f = imageio.imread(filename, mode='L')
     is_light = np.mean(f) > 40
     print(is_light)
     assert is_light != False
@@ -137,7 +149,11 @@ def test_imagetresholdvalue_FALSE():
     imagetresholdbig = 39.99
     imagetresholdsmall = 1.00
     filename = path + dir_list[0]
-    f = imageio.imread(filename, mode='L')
+    if sys.version_info < (3, 7):
+        f = imageio.imread(pathfilename, pilmode='L')
+    else:
+        f = imageio.imread(pathfilename, mode='L')
+    #Fix for older python f = imageio.imread(filename, mode='L')
     meanvalue1 = np.mean(f)
     meanvalue = round(meanvalue1,5)
     assert not imagetresholdbig  >=  meanvalue >= imagetresholdsmall
