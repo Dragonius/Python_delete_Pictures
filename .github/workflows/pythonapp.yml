@@ -20,7 +20,7 @@ jobs:
         #depricated versions 3.6, 3.7 and 3.8 in 18.10.2024
         #We are moving to 3.6 -> versions should work on 3.5 version, also  currently broken no 64Arch [3.12]
         #UNdepricated versions from python 3.5 to python 3.11 in  16.02.2025
-      os: [ubuntu-latest] # we dont need windows currently, but is works currently [ windows-2019]
+        os: [ubuntu-latest] # we dont need windows currently, but is works currently [ windows-2019]
 
     steps:
     - uses: actions/checkout@v4
