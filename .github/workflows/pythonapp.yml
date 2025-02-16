@@ -12,7 +12,6 @@ on:
 
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
     strategy:
       # we should give github deside own speed max-parallel: 1
       matrix:
@@ -23,9 +22,11 @@ jobs:
         os: [ubuntu-20.04, ubuntu-latest] # we dont need windows currently, but is works currently [ windows-2019]
         exclude:
           - os: ubuntu-latest
-            python: 3.5, 3.6
+            python: [3.5, 3.6]
           - os: ubuntu-20.04
-            python: 3.7, 3.8, 3.9, 3.10.10, 3.11, 3.12
+            python: [3.7, 3.8, 3.9, 3.10.10, 3.11, 3.12]
+    runs-on: ${{ matrix.os }}
+
 
     steps:
     - uses: actions/checkout@v4
