@@ -104,9 +104,9 @@ def test_imgislight_TRUE():
     #imagetreshold = 141.1277
     filename = path + dir_list[4]
     if sys.version_info < (3, 7):
-        f = imageio.imread(pathfilename, pilmode='L')
+        f = imageio.imread(filename, pilmode='L')
     else:
-        f = imageio.imread(pathfilename, mode='L')
+        f = imageio.imread(filename, mode='L')
     #Fix for older python f = imageio.imread(filename, mode='L')
     is_light = np.mean(f) > 40
     print(is_light)
@@ -120,9 +120,9 @@ def test_imagetresholdvalue_TRUE():
     imagetresholdsmall = 141.11
     filename = path + dir_list[4]
     if sys.version_info < (3, 7):
-        f = imageio.imread(pathfilename, pilmode='L')
+        f = imageio.imread(filename, pilmode='L')
     else:
-        f = imageio.imread(pathfilename, mode='L')
+        f = imageio.imread(filename, mode='L')
     #Fix for older python f = imageio.imread(filename, mode='L')
     meanvalue1 = np.mean(f)
     meanvalue = round(meanvalue1,5)
@@ -134,9 +134,9 @@ def test_imgislight_FALSE():
     #imagetreshold = 141.1277
     filename = path + dir_list[0]
     if sys.version_info < (3, 7):
-        f = imageio.imread(pathfilename, pilmode='L')
+        f = imageio.imread(filename, pilmode='L')
     else:
-        f = imageio.imread(pathfilename, mode='L')
+        f = imageio.imread(filename, mode='L')
     #Fix for older python f = imageio.imread(filename, mode='L')
     is_light = np.mean(f) > 40
     print(is_light)
@@ -150,9 +150,9 @@ def test_imagetresholdvalue_FALSE():
     imagetresholdsmall = 1.00
     filename = path + dir_list[0]
     if sys.version_info < (3, 7):
-        f = imageio.imread(pathfilename, pilmode='L')
+        f = imageio.imread(filename, pilmode='L')
     else:
-        f = imageio.imread(pathfilename, mode='L')
+        f = imageio.imread(filename, mode='L')
     #Fix for older python f = imageio.imread(filename, mode='L')
     meanvalue1 = np.mean(f)
     meanvalue = round(meanvalue1,5)
