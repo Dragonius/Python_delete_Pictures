@@ -15,14 +15,12 @@ jobs:
     strategy:
       # we should give github deside own speed max-parallel: 1
       matrix:
-        python: [3.5, 3.6, 3.7, 3.8, 3.9, 3.10.10, 3.11, 3.12]
+        python: [3.6, 3.7, 3.8, 3.9, 3.10.10, 3.11, 3.12]
         #depricated versions 3.6, 3.7 and 3.8 in 18.10.2024
         #We are moving to 3.6 -> versions should work on 3.5 version, also  currently broken no 64Arch [3.12]
         #UNdepricated versions from python 3.5 to python 3.11 in  16.02.2025
         os: [ubuntu-20.04, ubuntu-latest] # we dont need windows currently, but is works currently [ windows-2019]
         exclude:
-          - os: ubuntu-latest
-            python: 3.5
           - os: ubuntu-latest
             python: 3.6
           - os: ubuntu-latest
