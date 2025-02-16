@@ -64,7 +64,12 @@ def main():
 
 #       Obselete
 #        f = imageio.imread(pathfilename, as_gray=True)
-        f = imageio.imread(pathfilename, mode='L')
+        if sys.version_info < (3, 7):
+            f = imageio.imread(pathfilename, pilmode='L')
+        else:
+            f = imageio.imread(pathfilename, mode='L')
+
+        #f = imageio.imread(pathfilename, mode='L')
 
         #Imageio Verify is broken and its not coming back
         #print(pathfilename)
