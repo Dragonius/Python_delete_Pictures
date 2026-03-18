@@ -67,7 +67,7 @@ def main():
         if sys.version_info < (3, 7):
             f = imageio.imread(pathfilename, pilmode='L')
         else:
-            f = imageio.imread(pathfilename, mode='L')
+            f = imageio.imread(pathfilename, pilmode='L')
 
         #f = imageio.imread(pathfilename, mode='L')
 
