@@ -4,11 +4,25 @@
 
 Simple Commandline: for i in /home/username/Pictures/*.jpg; do python3 ./delete.py "$i";done
 
-Requirments starts from:
-python 3.8 -> python 3.11
-Pillow ( 9.3.0 ) 
-nympy
-imageio ( Python 3.7 and newer ) 
+Requirements and compatibility:
+
+Python version support: Python 3.6 and newer (imageio requires Python 3.7+).
+
+Core dependencies: NumPy and imageio are required.
+
+Pillow version matrix:
+
+  • Python 3.6: Pillow>=8.2,<8.5
+	
+  • Python 3.7: Pillow>=9.0,<9.6
+	
+  • Python 3.8: Pillow>=10.0,<11.0
+	
+  • Python 3.9: Pillow>=11.0.0,<12.0
+	
+  • Python 3.10: Pillow>=12.3.0
+	
+  • Python 3.11 – 3.13: Pillow>=13.0.0
 
 
 [![Python tests](https://github.com/Dragonius/Python_delete_Pictures/actions/workflows/pythonapp.yml/badge.svg)](https://github.com/Dragonius/Python_delete_Pictures/actions/workflows/pythonapp.yml)
