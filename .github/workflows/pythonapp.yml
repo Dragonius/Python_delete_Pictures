@@ -13,9 +13,12 @@ on:
 jobs:
   build:
     strategy:
-      # we should give github deside own speed max-parallel: 1
+      # max-parallel: 1 pakottaa työt ajettavaksi peräkkäin (sarjassa)
+      max-parallel: 2
+      # fail-fast: false varmistaa, että kaikki yhdistelmät ajetaan, vaikka jokin niistä epäonnistuisi
+      fail-fast: false
       matrix:
-        python: [3.8, 3.9, 3.10.10, 3.11, 3.12]
+        python: [3.8, 3.9, 3.10.10, 3.11, 3.12, 3.13]
         #depricated versions 3.6, 3.7 and 3.8 in 18.10.2024
         #We are moving to 3.6 -> versions should work on 3.5 version, also  currently broken no 64Arch [3.12]
         #UNdepricated versions from python 3.5 to python 3.11 in  16.02.2025
@@ -35,13 +38,15 @@ jobs:
             python: 3.11
           - os: ubuntu-20.04
             python: 3.12
+          - os: ubuntu-20.04
+            python: 3.13
     runs-on: ${{ matrix.os }}
 
 
     steps:
     - uses: actions/checkout@v7
     - name: Setup Python
-      uses: actions/setup-python@v7.0.0
+      uses: actions/setup-python@v7.1.0
       with:
         python-version: ${{ matrix.python }}
     - name: Install dependencies
