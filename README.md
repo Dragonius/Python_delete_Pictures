@@ -21,5 +21,6 @@ imageio ( Python 3.7 and newer )
 
 
 Updates: 
+2.11.2026 added python 3.13
 14.2.2024 update code to newer codebase.
 25.6.2023 Stared to sign commits
