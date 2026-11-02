@@ -12,9 +12,9 @@ Core dependencies: NumPy and imageio are required.
 
 Pillow version matrix:
 
-  • Python 3.6: Pillow>=8.2,<8.5
+  • [deprecated] Python 3.6: Pillow>=8.2,<8.5
 	
-  • Python 3.7: Pillow>=9.0,<9.6
+  • [deprecated] Python 3.7: Pillow>=9.0,<9.6
 	
   • Python 3.8: Pillow>=10.0,<11.0
 	
